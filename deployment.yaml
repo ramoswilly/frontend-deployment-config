@@ -13,6 +13,8 @@ spec:
       labels:
         app: frontend
     spec:
+      imagePullSecrets:
+      - name: ghcr-creds
       containers:
       - name: frontend-container
         image: ghcr.io/ramoswilly/frontend-app:placeholder
