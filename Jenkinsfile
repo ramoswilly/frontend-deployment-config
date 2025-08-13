@@ -35,11 +35,11 @@ pipeline {
                     // 2. APLICAR LOS CAMBIOS AL CLÚSTER
                     // Ejecuta kubectl apply para todos los archivos .yaml en el directorio actual.
                     echo "Aplicando manifiestos a k3s..."
-                    sh "kubectl apply -f ."
+                    sh "sudo kubectl apply -f ."
 
                     // 3. FORZAR LA ACTUALIZACIÓN DE LOS PODS
                     echo "Forzando el reinicio del deployment 'frontend-deployment'..."
-                    sh "kubectl rollout restart deployment frontend-deployment -n production"
+                    sh "sudo kubectl rollout restart deployment frontend-deployment -n production"
 
                     echo "¡Despliegue completado exitosamente!"
                 }
